@@ -1,10 +1,17 @@
-import React from "react";
+import { useQuery } from "react-query";
+
 import Slider from "react-slick";
 
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const Row = ({ title, fetchURL }) => {
+  // Query database for specific row data
+  const { isLoading, error, data } = useQuery("repoData", () =>
+    fetch("https://api.github.com/repos/tannerlinsley/react-query").then((res) => res.json())
+  );
+
+  // Carousel settings
   const settings = {
     className: "center",
     infinite: true,
@@ -15,7 +22,6 @@ const Row = ({ title, fetchURL }) => {
       console.log(`Slider Changed to: ${index + 1}, background: #222; color: #bada55`);
     },
   };
-  console.log(fetchURL);
   return (
     <div className="mt-8">
       <h2 className="text-4xl font-semibold mb-4">{title}</h2>
