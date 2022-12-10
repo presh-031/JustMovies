@@ -4,7 +4,7 @@ import Slider from "react-slick";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-const Row = () => {
+const Row = ({ title, fetchURL }) => {
   const settings = {
     className: "center",
     infinite: true,
@@ -15,9 +15,10 @@ const Row = () => {
       console.log(`Slider Changed to: ${index + 1}, background: #222; color: #bada55`);
     },
   };
+  console.log(fetchURL);
   return (
     <div className="mt-8">
-      <h2 className="text-4xl font-semibold mb-4">Trending</h2>
+      <h2 className="text-4xl font-semibold mb-4">{title}</h2>
       <Slider {...settings}>
         <div className=" relative ">
           <img src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg" alt="" />
