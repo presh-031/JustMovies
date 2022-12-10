@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "./Row";
 
-import { API_REQUESTS } from "../api/requests";
+import API_REQUESTS from "../api/requests";
 
 const Rows = () => {
   return (

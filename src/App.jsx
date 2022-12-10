@@ -1,8 +1,10 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 
-import Hero from "./components/Hero";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Rows from "./components/Rows";
+import Home from "./pages/Home";
+import Movie from "./pages/Movie";
 
 const queryClient = new QueryClient();
 
@@ -11,8 +13,13 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="App bg-black text-white max-w-full overflow-x-hidden">
         <Navbar />
-        <Hero />
-        <Rows />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/movie" element={<Movie />} />
+          </Routes>
+        </Router>
+        <Navbar />
       </div>
     </QueryClientProvider>
   );

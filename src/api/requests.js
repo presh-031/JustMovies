@@ -3,7 +3,7 @@ export const API_KEY = "07b05651d442420d47455773a0c1dad3";
 export const backdrop_URL = "https://image.tmdb.org/t/p/original";
 export const backdrop_URL_Small = "https://image.tmdb.org/t/p/w500";
 
-export const API_REQUESTS = {
+const API_REQUESTS = {
   Popular: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`,
   TopUpcoming: `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
   TopRated: `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`,
@@ -18,4 +18,8 @@ export const API_REQUESTS = {
   Drama: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=18`,
 };
 
-export const getMovieDetails = `https://api.themoviedb.org/3/movie/{movie_id}?api_key=${API_KEY}&language=en-US`;
+export const getMovieDetails = (movie_id) => {
+  return `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}&language=en-US`;
+};
+
+export default API_REQUESTS;
