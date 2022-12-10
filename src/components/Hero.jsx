@@ -1,12 +1,12 @@
 const Hero = () => {
   return (
-    <div className="h-screen border border-red-800 relative">
+    <div className="h-screen  relative">
       <img
         className="h-full object-cover w-full"
         src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"
         alt=""
       />
-      <div className="text-white absolute border border-red-800 top-44 left-8">
+      <div className="text-white absolute  top-44 left-8">
         <p className="font-semibold text-5xl mb-4">Warriors of Future</p>
         <div className="flex gap-4">
           <button className="py-4 px-8  text-2xl rounded-sm hover:border-[1px] hover:bg-transparent hover:border-white hover:outline-none hover:text-white text-black bg-slate-300">

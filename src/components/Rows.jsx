@@ -5,6 +5,11 @@ const Rows = () => {
   return (
     <div>
       <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
+      <Row />
     </div>
   );
 };

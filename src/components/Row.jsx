@@ -1,40 +1,59 @@
 import React from "react";
 import Slider from "react-slick";
+
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const Row = () => {
   const settings = {
-    dots: false,
+    className: "center",
     infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    centerPadding: "60px",
+    slidesToShow: 2.5,
+    swipeToSlide: true,
+    afterChange: function (index) {
+      console.log(`Slider Changed to: ${index + 1}, background: #222; color: #bada55`);
+    },
   };
   return (
-    <div>
-      <h2>Trending</h2>
+    <div className="mt-8">
+      <h2 className="text-4xl font-semibold mb-4">Trending</h2>
       <Slider {...settings}>
-        <div>
-          <img src="" alt="" />
-          <div>
-            <p>Emancipation</p>
+        <div className=" relative ">
+          <img src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg" alt="" />
+          <div className="absolute w-full top-0 bg-black/80  backdrop-blur-md p-2 text-xl">
+            <p className="text-bold">Emancipation</p>
           </div>
         </div>
-        <div>
-          <h3>2</h3>
+        <div className=" relative ">
+          <img src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg" alt="" />
+          <div className="absolute w-full top-0 bg-black/80  backdrop-blur-md p-2 text-xl">
+            <p className="text-bold">Emancipation</p>
+          </div>
         </div>
-        <div>
-          <h3>3</h3>
+        <div className=" relative ">
+          <img src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg" alt="" />
+          <div className="absolute w-full top-0 bg-black/80  backdrop-blur-md p-2 text-xl">
+            <p className="text-bold">Emancipation</p>
+          </div>
         </div>
-        <div>
-          <h3>4</h3>
+        <div className=" relative ">
+          <img src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg" alt="" />
+          <div className="absolute w-full top-0 bg-black/80  backdrop-blur-md p-2 text-xl">
+            <p className="text-bold">Emancipation</p>
+          </div>
         </div>
-        <div>
-          <h3>5</h3>
+        <div className=" relative ">
+          <img src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg" alt="" />
+          <div className="absolute w-full top-0 bg-black/80  backdrop-blur-md p-2 text-xl">
+            <p className="text-bold">Emancipation</p>
+          </div>
         </div>
-        <div>
-          <h3>6</h3>
+        <div className=" relative ">
+          <img src="https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg" alt="" />
+          <div className="absolute w-full top-0 bg-black/80  backdrop-blur-md p-2 text-xl">
+            <p className="text-bold">Emancipation</p>
+          </div>
         </div>
       </Slider>
     </div>
