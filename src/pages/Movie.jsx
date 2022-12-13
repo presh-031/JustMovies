@@ -2,8 +2,8 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../api/requests";
 import MovieDetails from "../components/MovieDetails";
+import Reviews from "../components/Reviews";
 import SimilarMovies from "../components/SimilarMovies";
-import Reviews from "./Reviews";
 
 const Movie = () => {
   let params = useParams();

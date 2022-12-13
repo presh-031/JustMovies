@@ -18,8 +18,18 @@ const API_REQUESTS = {
   Drama: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=18`,
 };
 
+// Movie details urls
 export const getMovieDetails = (movie_id) => {
   return `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}&language=en-US`;
+};
+export const getMovieCast = (movie_id) => {
+  return `https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=${API_KEY}&language=en-US`;
+};
+export const getMovieReviews = (movie_id) => {
+  return `https://api.themoviedb.org/3/movie/${movie_id}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
+};
+export const getSimilarMovies = (movie_id) => {
+  return `https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=${API_KEY}&language=en-US&page=1`;
 };
 
 export default API_REQUESTS;
