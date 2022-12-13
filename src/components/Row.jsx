@@ -1,5 +1,7 @@
 import { useQuery } from "react-query";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Slider from "react-slick";
 
 // Import css files
@@ -32,6 +34,9 @@ const Row = ({ title, fetchURL }) => {
     // },
   };
 
+  // Initialize navigate
+  const navigate = useNavigate();
+
   // console.log(title, data?.results);
   // console.log(fetchURL);
   return (
@@ -40,7 +45,7 @@ const Row = ({ title, fetchURL }) => {
       <Slider {...settings}>
         {data?.results?.map((movie) => {
           return (
-            <div key={movie.id} className=" relative ">
+            <div key={movie.id} className=" relative " onClick={() => navigate(`/movies/${movie.id}`)}>
               <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" />
               <div className="absolute w-full top-0 bg-black/80  backdrop-blur-md p-2 text-xl">
                 {/* api often returns varying data depending on movie */}

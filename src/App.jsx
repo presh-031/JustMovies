@@ -16,10 +16,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/movie" element={<Movie />} />
+            <Route path="/movies/:id" element={<Movie />} />
           </Routes>
         </Router>
-        <Navbar />
+        {/* <Navbar /> */}
       </div>
     </QueryClientProvider>
   );
