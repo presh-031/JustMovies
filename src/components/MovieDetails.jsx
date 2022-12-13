@@ -1,31 +1,35 @@
-import React from "react";
+import { useQuery } from "react-query";
 
-const MovieDetails = ({ data }) => {
+const MovieDetails = ({ movie }) => {
+  const { isLoading, error, data } = useQuery("movie-details", () =>
+    fetch(getMovieDetails(params.id)).then((res) => res.json())
+  );
+
   return (
     <div>
       <div>
-        <img src={`https://image.tmdb.org/t/p/original${data.poster_path}`} alt="" />
+        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" />
         <div>
           <h2>
-            {data.title || data.original_title || data.original_name || "Title"} ({data.release_date.slice(0, 4)})
+            {movie.title || movie.original_title || movie.original_name || "Title"} ({movie.release_date.slice(0, 4)})
           </h2>
           <p>
-            {data.vote_average} | {`${data.runtime / 60} Hrs ${data.runtime % 60} Minutes`}
+            {movie.vote_average} | {`${movie.runtime / 60} Hrs ${movie.runtime % 60} Minutes`}
           </p>
           <p>
-            {data.spoken_languages?.map((language) => (
+            {movie.spoken_languages?.map((language) => (
               // add keys
               <span>{language.english_name}</span>
             ))}
           </p>
           <div>
-            {data.genres?.map((genre) => (
+            {movie.genres?.map((genre) => (
               <div key={genre.id}>
                 <p>{genre.name}</p>
               </div>
             ))}
           </div>
-          <p>{data.overview}</p>
+          <p>{movie.overview}</p>
 
           <h3>Cast</h3>
         </div>

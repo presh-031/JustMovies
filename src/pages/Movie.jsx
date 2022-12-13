@@ -25,9 +25,9 @@ const Movie = () => {
         <img src={data ? `https://image.tmdb.org/t/p/original${data.backdrop_path}` : ""} alt="" />
       </div>
 
-      <MovieDetails data={data} />
-      <SimilarMovies data={data} />
-      <Reviews data={data} />
+      <MovieDetails movie={data} />
+      <SimilarMovies movie={data} />
+      <Reviews movie={data} />
     </div>
   );
 };
