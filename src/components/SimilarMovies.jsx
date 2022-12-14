@@ -1,6 +1,6 @@
 import React from "react";
 
-const SimilarMovies = () => {
+const SimilarMovies = ({ id }) => {
   return <div>SimilarMovies</div>;
 };
 
