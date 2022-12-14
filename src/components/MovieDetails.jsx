@@ -1,10 +1,9 @@
 import { useQuery } from "react-query";
+import MovieCast from "./MovieCast";
+import MovieReviews from "./MovieReviews";
+import SimilarMovies from "./SimilarMovies";
 
 const MovieDetails = ({ movie }) => {
-  const { isLoading, error, data } = useQuery("movie-details", () =>
-    fetch(getMovieDetails(params.id)).then((res) => res.json())
-  );
-
   return (
     <div>
       <div>
@@ -32,6 +31,9 @@ const MovieDetails = ({ movie }) => {
           <p>{movie.overview}</p>
 
           <h3>Cast</h3>
+          <MovieCast id={movie.id} />
+          <SimilarMovies id={movie.id} />
+          <MovieReviews id={movie.id} />
         </div>
       </div>
     </div>

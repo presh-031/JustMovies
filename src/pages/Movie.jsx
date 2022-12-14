@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../api/requests";
 import MovieDetails from "../components/MovieDetails";
-import Reviews from "../components/Reviews";
+import Reviews from "../components/MovieReviews";
 import SimilarMovies from "../components/SimilarMovies";
 
 const Movie = () => {
@@ -26,8 +26,6 @@ const Movie = () => {
       </div>
 
       <MovieDetails movie={data} />
-      <SimilarMovies movie={data} />
-      <Reviews movie={data} />
     </div>
   );
 };
