@@ -6,7 +6,10 @@ const Review = ({ review }) => {
       </div>
       <div>
         <p>{review.author_details.name}</p>
-        <p>@{review.author_details.username}</p>
+        <p>
+          &#64;
+          {review.author_details.username}
+        </p>
         <p>{review.author_details.rating}</p>
       </div>
       <div>
