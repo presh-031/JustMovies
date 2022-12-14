@@ -37,8 +37,7 @@ const Row = ({ title, fetchURL }) => {
   // Initialize navigate
   const navigate = useNavigate();
 
-  // console.log(title, data?.results);
-  // console.log(fetchURL);
+  console.log(title, fetchURL, data);
   return (
     <div className="mt-16">
       <h2 className="text-4xl font-semibold mb-4">{title}</h2>

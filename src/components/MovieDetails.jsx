@@ -33,6 +33,7 @@ const MovieDetails = ({ movie }) => {
           <MovieCast id={movie.id} />
 
           <SimilarMovies id={movie.id} />
+
           <MovieReviews id={movie.id} />
         </div>
       </div>
