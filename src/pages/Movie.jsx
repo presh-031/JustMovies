@@ -22,7 +22,11 @@ const Movie = () => {
   return (
     <div>
       <div>
-        <img src={data ? `https://image.tmdb.org/t/p/original${data.backdrop_path}` : ""} alt="" />
+        <img
+          className="h-screen object-cover "
+          src={data ? `https://image.tmdb.org/t/p/original${data.backdrop_path}` : ""}
+          alt=""
+        />
       </div>
 
       <MovieDetails movie={data} />

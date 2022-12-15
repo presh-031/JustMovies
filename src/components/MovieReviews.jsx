@@ -9,15 +9,16 @@ const MovieReviews = ({ id }) => {
 
   if (isLoading) return;
   if (error) return;
+
   console.log(data);
   return (
     <div>
       <p>MovieReviews</p>
-      <>
-        {data.results?.map((review) => (
+      <div>
+        {data?.results?.map((review) => (
           <Review review={review} />
         ))}
-      </>
+      </div>
     </div>
   );
 };
