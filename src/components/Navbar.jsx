@@ -1,8 +1,8 @@
 const Navbar = () => {
   return (
-    <div className="px-4 fixed z-[100]  bg-black/80 w-full  outline py-6  backdrop-blur-md">
-      <p className="text-green-600 font-semibold text-7xl">JustMovies</p>
-      <p className="text-xm text-white italic">your movies database...</p>
+    <div className="fixed z-[100] w-full bg-opacity-10  px-4 py-6  shadow-xl  backdrop-blur-2xl">
+      <p className="text-7xl font-semibold text-green-600">JustMovies</p>
+      <p className="text-xm italic text-white">your movies database...</p>
     </div>
   );
 };

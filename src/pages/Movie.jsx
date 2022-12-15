@@ -21,7 +21,8 @@ const Movie = () => {
   }
   return (
     <div>
-      <div>
+      <div className="relative">
+        <div className="absolute h-full w-full bg-gradient-to-t from-black"></div>
         <img
           className="h-screen object-cover "
           src={data ? `https://image.tmdb.org/t/p/original${data.backdrop_path}` : ""}

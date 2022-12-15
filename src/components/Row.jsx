@@ -40,13 +40,13 @@ const Row = ({ title, fetchURL }) => {
   console.log(title, fetchURL, data);
   return (
     <div className="mt-16">
-      <h2 className="text-4xl font-semibold mb-4">{title}</h2>
+      <h2 className="mb-4 text-4xl font-semibold">{title}</h2>
       <Slider {...settings}>
         {data?.results?.map((movie) => {
           return (
-            <div key={movie.id} className=" relative " onClick={() => navigate(`/movies/${movie.id}`)}>
-              <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" />
-              <div className="absolute w-full top-0 bg-black/80  backdrop-blur-md p-2 text-xl">
+            <div key={movie.id} className=" relative " onClick={() => navigate(`/movies/${movie?.id}`)}>
+              <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie?.title} />
+              <div className="absolute top-0 w-full bg-black/80  p-2 text-xl backdrop-blur-md">
                 {/* api often returns varying data depending on movie */}
                 <p className="text-bold">{movie.title || movie.original_title || movie.original_name || "title"}</p>
               </div>
